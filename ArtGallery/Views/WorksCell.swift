@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorksCell: UITableViewCell {
+class WorksCell: UICollectionViewCell{
 
     override func awakeFromNib() {
         super.awakeFromNib()

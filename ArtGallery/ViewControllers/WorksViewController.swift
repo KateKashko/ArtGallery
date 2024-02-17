@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorksViewController: UIViewController {
+class WorksViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
