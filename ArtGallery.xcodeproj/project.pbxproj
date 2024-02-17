@@ -19,6 +19,7 @@
 		939492672B81452B0019C9E5 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939492662B81452B0019C9E5 /* ArtistsViewController.swift */; };
 		939492692B8145390019C9E5 /* WorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939492682B8145390019C9E5 /* WorksViewController.swift */; };
 		9394926B2B81454E0019C9E5 /* WorkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9394926A2B81454E0019C9E5 /* WorkDetailsViewController.swift */; };
+		9394926D2B8153AE0019C9E5 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 9394926C2B8153AE0019C9E5 /* artists.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		939492662B81452B0019C9E5 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
 		939492682B8145390019C9E5 /* WorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksViewController.swift; sourceTree = "<group>"; };
 		9394926A2B81454E0019C9E5 /* WorkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailsViewController.swift; sourceTree = "<group>"; };
+		9394926C2B8153AE0019C9E5 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				939492582B81445F0019C9E5 /* Storyboards */,
 				9394924D2B8142610019C9E5 /* Assets.xcassets */,
 				939492522B8142610019C9E5 /* Info.plist */,
+				9394926C2B8153AE0019C9E5 /* artists.json */,
 			);
 			path = ArtGallery;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				939492512B8142610019C9E5 /* LaunchScreen.storyboard in Resources */,
 				9394924E2B8142610019C9E5 /* Assets.xcassets in Resources */,
+				9394926D2B8153AE0019C9E5 /* artists.json in Resources */,
 				9394924C2B81425F0019C9E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

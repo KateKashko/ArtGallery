@@ -7,23 +7,54 @@
 
 import UIKit
 
-class ArtistsViewController: UITableViewController {
-
+final class ArtistsViewController: UITableViewController {
+    
+    var artists: Gallery?
+    private let networkManager = NetworkManager.shared
+    private let url = NetworkManager.shared.url
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.rowHeight = 160
+        fetchArtist()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toworks" {
+            guard let worksVC = segue.destination as? WorksViewController else  { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return}
+            let artist = artists?.artists[indexPath.row]
+            worksVC.works = artist?.works ?? []
+        }
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+// MARK: - Table view data source
+extension ArtistsViewController {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        artists?.artists.count ?? 0
     }
-    */
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "artist", for: indexPath)
+        guard let cell = cell as? ArtistCell else { return UITableViewCell()}
+        let artist = artists?.artists[indexPath.row]
+        cell.configure(with: artist!)
+        return cell
+        
+    }
+}
 
+extension ArtistsViewController {
+    private func fetchArtist() {
+        networkManager.fetchArtist(from: url) { [weak self] result in
+            switch result {
+            case .success(let artists):
+                self?.artists = artists
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
