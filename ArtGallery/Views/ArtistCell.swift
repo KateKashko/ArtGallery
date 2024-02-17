@@ -8,16 +8,16 @@
 import UIKit
 
 class ArtistCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var artistImage: UIImageView!
+    @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var artistBio: UILabel!
+    
+    private let networkManager = NetworkManager.shared
+    
+    func configure(with artist: Artist) {
+        artistName.text = artist.name
+        artistBio.text = artist.bio
+        artistImage.image = UIImage(named: artist.name)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

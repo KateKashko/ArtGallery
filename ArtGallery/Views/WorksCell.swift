@@ -8,16 +8,12 @@
 import UIKit
 
 class WorksCell: UICollectionViewCell{
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var worksImage: UIImageView!
+    @IBOutlet weak var worksTitle: UILabel!
+    
+    func configure(with works: Work) {
+        worksTitle.text = works.title
+        worksImage.image = UIImage(named: works.title)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
