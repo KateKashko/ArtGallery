@@ -9,21 +9,20 @@ import UIKit
 
 class WorkDetailsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var workTitle: UILabel!
+    @IBOutlet weak var workImage: UIImageView!
+    @IBOutlet weak var workInfo: UILabel!
+    
+    var work = [Work]()
+    
+    func configure(with work: Work) {
+        workTitle.text = work.title
+        workInfo.text = work.title
+        workImage.image = UIImage(named: work.title)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
 
 }
